@@ -77,6 +77,9 @@ def countdown():
         # update the time left label
         time.config(text='Time left' + str(timeleft))
 
+        # run the function again after 1 second
+        time.after(1000, countdown)
+
 
 # Instruction Label
 instruction = Label(root, text="Type the color of the words.",
@@ -99,6 +102,10 @@ color_name.place(x=200, y=150, width=400, height=100)
 
 # text entry fox for typing
 color_entry = Entry(root, font=('helvetica', 15, ))
+
+# Run the 'startGame' function when the enter key is pressed
+root.bind('<Return>', startGame)
+
 color_entry.place(x=300, y=300, width=200, height=30)
 
 
