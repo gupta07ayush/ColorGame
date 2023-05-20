@@ -1,4 +1,4 @@
-from tkinter import Tk, Label, Entry, Button
+from tkinter import Tk, Label, Entry, END
 import random
 
 # create tkinter GUI
@@ -23,7 +23,38 @@ score = 0
 timeleft = 30
 
 
+# function to choose and display the next color
+def nextColor():
+
+    # use the globally declared 'score' and 'timeleft' variables above.
+    global score
+    global timeleft
+
+    # if a game is currently in play
+    if timeleft > 0:
+
+        # make the text entry box active
+        color_entry.focus_set()
+
+        # if the color typed is equal to the color of the text
+        if color_entry.get().lower() == colors[1].lower():
+            score += 1
+
+        # clear the text entry box
+        color_entry.delete(0, END)
+
+        random.shuffle(colors)
+
+        # change the color to type, by changing the
+        # text and the color to a random color value
+        color_name.config(fg=str(colors[1]), text=str(colors[0]))
+
+        # update the score
+        score.config(text='Score: ' + str(score))
+
 # Countdown timer function
+
+
 def countdown():
     global timeleft
 
@@ -52,8 +83,8 @@ time = Label(root, text='Time Left: ' + str(timeleft),
 time.place(x=250, y=100, width=200)
 
 # Label for displaying the colors name
-colors_name = Label(root, font=('Helvetica', 20, 'bold'))
-colors_name.place(x=200, y=150, width=400, height=100)
+color_name = Label(root, font=('Helvetica', 20, 'bold'))
+color_name.place(x=200, y=150, width=400, height=100)
 
 # text entry fox for typing
 color_entry = Entry(root, font=('helvetica', 15, ))
