@@ -23,6 +23,19 @@ score = 0
 timeleft = 30
 
 
+# Countdown timer function
+def countdown():
+    global timeleft
+
+    # if a game is in play
+    if timeleft > 0:
+        # decrement the timer
+        timeleft -= 1
+
+        # update the time left label
+        time.config(text='Time left' + str(timeleft))
+
+
 # Instruction Label
 instruction = Label(root, text="Type the color of the words.",
                     font=("Helvetica", 20, 'bold'))
@@ -34,7 +47,7 @@ score = Label(root, text='Press Enter to Start',
 score.place(x=250, y=70, width=200)
 
 # Time left label
-time = Label(root, text='Time Left: ',
+time = Label(root, text='Time Left: ' + str(timeleft),
              font=("Helvetica", 15, "bold"))
 time.place(x=250, y=100, width=200)
 
