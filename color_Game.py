@@ -32,6 +32,9 @@ time.place(x=250, y=100, width=200)
 colors_name = Label(root, font=('Helvetica', 20, 'bold'))
 colors_name.place(x=200, y=150, width=400, height=100)
 
+# text entry fox for typing
+color_entry = Entry(root, font=('helvetica', 15, ))
+color_entry.place(x=300, y=300, width=200, height=30)
 
 # start the GUI
 root.mainloop()
