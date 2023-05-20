@@ -10,10 +10,15 @@ root.title('Color Game')
 # set the window size
 root.geometry('700x500')
 
-# Add an Instruction Label
+# Instruction Label
 instruction = Label(root, text="Type the color of the words.",
                     font=("Helvetica", 20, 'bold'))
 instruction.place(x=150, y=30, width=400)
+
+# Score Label
+score = Label(root, text='Press Enter to start',
+              font=("Helvetica", 15, "bold"))
+score.place(x=250, y=70, width=200)
 
 
 # start the GUI
