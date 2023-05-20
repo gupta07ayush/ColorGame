@@ -22,6 +22,17 @@ score = 0
 # the game time left, initially it is 30 seconds.
 timeleft = 30
 
+# function that will start the game
+
+
+def startGame(event):
+    if timeleft == 30:
+        # start the countdown
+        countdown()
+
+    # run the function to choose the next color
+    nextColor()
+
 
 # function to choose and display the next color
 def nextColor():
