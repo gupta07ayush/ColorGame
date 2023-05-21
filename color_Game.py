@@ -33,8 +33,9 @@ def startGame(event):
     # run the function to choose the next color
     nextColor()
 
-
 # function to choose and display the next color
+
+
 def nextColor():
 
     # use the globally declared 'score' and 'timeleft' variables above.
@@ -61,7 +62,7 @@ def nextColor():
         color_name.config(fg=str(colors[1]), text=str(colors[0]))
 
         # update the score
-        score.config(text='Score: ' + str(score))
+        score_label.config(text="Score: " + str(score))
 
 # Countdown timer function
 
@@ -75,7 +76,7 @@ def countdown():
         timeleft -= 1
 
         # update the time left label
-        time.config(text='Time left' + str(timeleft))
+        time.config(text='Time left: ' + str(timeleft))
 
         # run the function again after 1 second
         time.after(1000, countdown)
@@ -87,16 +88,16 @@ instruction = Label(root, text="Type the color of the words.",
 instruction.place(x=150, y=30, width=400)
 
 # Score Label
-score = Label(root, text='Press Enter to Start',
-              font=("Helvetica", 15, "bold"))
-score.place(x=250, y=70, width=200)
+score_label = Label(root, text='Press Enter to Start',
+                    font=("Helvetica", 15, "bold"))
+score_label.place(x=250, y=70, width=200)
 
 # Time left label
 time = Label(root, text='Time Left: ' + str(timeleft),
              font=("Helvetica", 15, "bold"))
 time.place(x=250, y=100, width=200)
 
-# Label for displaying the colors name
+# Label for displaying the color name
 color_name = Label(root, font=('Helvetica', 20, 'bold'))
 color_name.place(x=200, y=150, width=400, height=100)
 
@@ -107,6 +108,10 @@ color_entry = Entry(root, font=('helvetica', 15, ))
 root.bind('<Return>', startGame)
 
 color_entry.place(x=300, y=300, width=200, height=30)
+
+
+# set focus on the entry box
+color_entry.focus_set()
 
 
 # start the GUI
