@@ -11,7 +11,7 @@ root.title('Color Game')
 root.geometry('700x500')
 
 # background color of the window
-root.config(bg="#d6ccc2")
+# root.config(bg="white")
 
 
 # list of possible colors.
@@ -98,8 +98,8 @@ time = Label(root, text='Time Left: ' + str(timeleft),
 time.place(x=250, y=100, width=200)
 
 # Label for displaying the color name
-color_name = Label(root, font=('Helvetica', 20, 'bold'))
-color_name.place(x=200, y=150, width=400, height=100)
+color_name = Label(root, font=('Helvetica', 50, 'bold'))
+color_name.place(x=150, y=150, width=400, height=100)
 
 # text entry fox for typing
 color_entry = Entry(root, font=('helvetica', 15, ))
@@ -107,7 +107,7 @@ color_entry = Entry(root, font=('helvetica', 15, ))
 # Run the 'startGame' function when the enter key is pressed
 root.bind('<Return>', startGame)
 
-color_entry.place(x=300, y=300, width=200, height=30)
+color_entry.place(x=250, y=300, width=200, height=30)
 
 
 # set focus on the entry box
